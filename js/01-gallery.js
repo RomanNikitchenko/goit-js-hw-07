@@ -3,6 +3,7 @@ import { galleryItems } from './gallery-items.js';
 
 
 const gallery = document.querySelector(".gallery");
+
 const cardsMarcup = createImageCardsMarcup(galleryItems);
 
 gallery.insertAdjacentHTML("beforeend", cardsMarcup);
@@ -14,9 +15,9 @@ function createImageCardsMarcup(Items) {
             <a class="gallery__link" href="${original}">
                 <img
                     class="gallery__image"
-                     src="${preview}"
-                     data-source="${original}"
-                     alt="${description}"
+                    src="${preview}"
+                    data-source="${original}"
+                    alt="${description}"
                 />
             </a>
         </div>
@@ -34,5 +35,11 @@ function onImageContainerclick(evt) {
         return
     };
 
-    console.log(evt.target.dataset.source);
+    displaysModal(evt.target.dataset.source);
+};
+
+function displaysModal(image) {
+    basicLightbox.create(`
+		<img width="1400" height="900" src="${image}">
+	`).show();
 }
