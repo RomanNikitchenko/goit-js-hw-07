@@ -22,12 +22,10 @@ gallery.addEventListener('click', onImageContainerclick);
 function onImageContainerclick(evt) {
     evt.preventDefault();
 
-    // if (!evt.target.classList.contains("gallery__image")) {
-    //     return
-    // };
+    if (!evt.target.classList.contains("gallery__image")) {
+        return
+    };
 
-    const ancestorSelector = evt.target.closest('.gallery__item');
-
-    console.log(ancestorSelector.getAttribute('href'));
-    console.log(evt.target)
+    const ancestorSelector = evt.target.closest('.gallery a');
+    console.log(ancestorSelector);
 };
