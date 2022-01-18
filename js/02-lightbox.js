@@ -17,7 +17,10 @@ function createImageCardsMarcup(Items) {
     }).join("");
 };
 
-gallery.addEventListener('click', onImageContainerclick);
+
+var lightbox = new SimpleLightbox('.gallery a', onImageContainerclick);
+
+gallery.addEventListener('click', lightbox);
 
 function onImageContainerclick(evt) {
     evt.preventDefault();
@@ -25,7 +28,6 @@ function onImageContainerclick(evt) {
     if (!evt.target.classList.contains("gallery__image")) {
         return
     };
-
-    const ancestorSelector = evt.target.closest('.gallery a');
-    console.log(ancestorSelector);
 };
+
+
