@@ -31,9 +31,13 @@ gallery.addEventListener('click', onImageContainerclick);
 function onImageContainerclick(evt) {
     evt.preventDefault();
 
+    if (!evt.target.classList.contains("gallery__image")) {
+        return
+    };
+
     displaysModal(evt.target.dataset.source);
 
-    window.addEventListener('keydown', onEscKeyPress);
+    // window.addEventListener('keydown', onEscKeyPress);
 };
 
 
@@ -43,13 +47,13 @@ function displaysModal(image) {
 	`).show();
 }
 
-function onEscKeyPress(event) {
-    if (event.code === 'Escape') {
-        onCloseModal();
-    }
-}
+// function onEscKeyPress(event) {
+//     console.log(event.code)
+//     if (event.code === 'Escape') {
+//         onCloseModal();
+//     }
+// }
 
-function onCloseModal() {
-    window.removeEventListener('keydown', onEscKeyPress);
-    //
-}
+// function onCloseModal() {
+//     window.removeEventListener('keydown', onEscKeyPress);
+// }

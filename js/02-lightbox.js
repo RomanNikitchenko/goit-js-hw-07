@@ -4,7 +4,6 @@ import { galleryItems } from './gallery-items.js';
 const gallery = document.querySelector(".gallery");
 
 const cardsMarcup = createImageCardsMarcup(galleryItems);
-console.log(cardsMarcup);
 
 gallery.insertAdjacentHTML("beforeend", cardsMarcup);
 
@@ -21,8 +20,11 @@ function createImageCardsMarcup(Items) {
 
 gallery.addEventListener('click', (evt) => {
     evt.preventDefault();
-});
 
+    if (!evt.target.classList.contains("gallery__image")) {
+        return 
+    };
+});
 
 new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
