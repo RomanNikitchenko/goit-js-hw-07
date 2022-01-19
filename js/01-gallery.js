@@ -36,8 +36,6 @@ function onImageContainerclick(evt) {
     };
 
     displaysModal(evt.target.dataset.source);
-
-    // window.addEventListener('keydown', onEscKeyPress);
 };
 
 
@@ -46,14 +44,3 @@ function displaysModal(image) {
 		<img width="1400" height="900" src="${image}">
 	`).show();
 }
-
-// function onEscKeyPress(event) {
-//     console.log(event.code)
-//     if (event.code === 'Escape') {
-//         onCloseModal();
-//     }
-// }
-
-// function onCloseModal() {
-//     window.removeEventListener('keydown', onEscKeyPress);
-// }
